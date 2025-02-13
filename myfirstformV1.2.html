@@ -1,0 +1,203 @@
+<html>
+  <head>
+    <title>Form v1.2</title>
+  
+    <style>
+       body
+       {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("https://png.pngtree.com/background/20250102/original/pngtree-gorgeous-light-yellow-watercolor-texture-with-abstract-surface-picture-image_15220009.jpg");
+       }
+      
+      form .head1
+      {
+        
+        width: 90%;
+        border: 3px;
+        border-style: dashed;
+        border-color: green;
+        text-align: center;
+        font-size: 350%;
+        font-weight: 300;
+        
+      }
+
+      form .AllcontentBorder
+      {
+        padding:1%;
+        margin-top: 1%;
+        border: 3px;
+        border-style: solid;
+        border-color: rgb(0, 0, 0);
+        border-radius: 5px;
+      }
+
+      form .name_age
+      {
+        /* margin-left:1%; */
+        /* margin-top: 5%; */
+        background-color: rgba(0, 255, 255, 0);
+        /* padding: 10%; this reffers to gap between border and content */
+        width:99%;
+      }
+      form .name_age .textinput
+      {
+        text-decoration: underline;
+
+        border:0;
+        background-color:rgba(192, 179, 179, 0.603);
+        font-size: 130%;
+      }
+
+      form .basic_info
+      {
+        /* margin-left:1%; */
+        width:99%;
+        margin-top: 1%;
+        background-color: rgba(30, 255, 0, 0);
+       
+      }
+
+      form .AllcontentBorder .uploadingfiles
+      {
+        border:darkblue;
+        border-radius: 5px;
+        border-style: dashed;
+        border: 3px;
+      }
+
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+
+      
+    </style>
+
+  </head>
+  <body>
+      <!-- <img src="https://png.pngtree.com/background/20250102/original/pngtree-gorgeous-light-yellow-watercolor-texture-with-abstract-surface-picture-image_15220009.jpg" alt="superbackground" style="opacity: 1; position: absolute;width: 100%;"> -->
+      <form id="Myform">
+          
+          <center><div class ="head1">SuperHero Registration Form!</div></center>
+          <marquee scrollamount="30"><a href="https://www.youtube.com/watch?v=G33BWPt5e3Y&t=2s&ab_channel=GAMERSHANKS">Catch Me If you Can!!!</a></marquee>
+          
+          <div class = "AllContentBorder">
+              <div class = "name_age">
+                  
+                  <label for="name">Name:</label>
+                  <input type="text" class="textinput" id="name" name="name" required> <br><br>
+          
+          <label for="lastname">Last Name:</label>
+          <input type="text" class="textinput" id="lastname" name="lastname" placeholder="(optional)"> <br><br>
+
+          <label for="Age">Age:</label>
+          <input type="number" id="Age" name="Age" required> <br><br>
+          <!-- new thing -->
+          <span class="error" id="ageError"></span>
+
+          <hr>
+          
+        </div>
+
+        <div class="bday">
+          <label for="birthday">Your BDDAY:</label>
+          <input type="date" id="birthday" name="birthday" required> <br><br>
+        </div>
+
+        <div class="basic_info">
+          <label for="genderdropdown">Your Gender:</label>
+          <select name="genderdropdown">
+            <option value="NA">Prefer Not To Answer</option>
+            <option value="MALE" selected>Male</option>
+            <option value="FEMALE">Female</option>
+            <option value="TRANS">Trans</option>
+            <option value="OTHERS">Others</option>
+          </select>
+          <hr>
+        </div>
+
+        <div class="contact_details">
+          <label for="contact">Contact Number:</label>
+          <input type="tel" id="contact" name="contact" required> <br><br>
+
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address"> <br><br>
+
+          <label for="pincode">Pin Code:</label>
+          <input type="number" id="pincode" name="pincode" required>
+          <span class="error" id="pinError"></span>
+          <br><br>
+
+          <label for="state">State:</label>
+          <input type="text" id="state" name="state"> <br><br>
+
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country"> <br><br>
+        </div>
+      </div>
+
+      <div class="AllcontentBorder">
+        <div class="uploadingfiles">
+          <label for="pic1">PICTURE1</label>
+          <input type="file" id="pic1" name="filename"><br><br>
+
+          <label for="pic2">PICTURE2</label>
+          <input type="file" id="pic2" name="filename"><br><br>
+
+          <label for="pic3">PICTURE3</label>
+          <input type="file" id="pic3" name="filename"><br><br>
+
+          <label for="pic4">PICTURE4</label>
+          <input type="file" id="pic4" name="filename"><br><br>
+        </div>
+      </div>
+
+      <center>
+        <hr>
+        <br>
+      
+        <button type="button">This is a button</button> |
+        <button type="submit">Submitting Button</button> |
+        <button type="reset">Resetting button</button>
+        <br><br><br>
+      </center>
+      <marquee scrollamount="30"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Try this one!!!</a></marquee>
+
+    </form>
+
+    <!-- --------------------------------------------------------------------- -->
+
+    <script>
+      document.getElementById("Myform").addEventListener("submit", function(event) {
+        var isValid = true; 
+
+        var age = document.getElementById("Age").value;
+        if (age < 16) {
+          alert("YOU ARE SHOOOOOOOOOOOOOORT");
+          console.log("You are short!");
+          isValid = false;
+        }
+
+        var address = document.getElementById("address").value;
+        if (!address) {
+          alert("ADDRESS NOT ENTERED! Please provide an address.");
+        }
+
+        var pincode = document.getElementById("pincode").value;
+        if (!pincode) {
+          document.getElementById("pinError").innerText = "FILL PIN CODE ATLEAST Dumbo!";
+          isValid = false;
+        } else {
+          document.getElementById("pinError").innerText = "";
+        }
+
+        if (!isValid) {
+          event.preventDefault();
+        }
+      });
+    </script>
+
+  </body>
+</html>
