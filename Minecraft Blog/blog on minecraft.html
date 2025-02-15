@@ -1,0 +1,511 @@
+<html><!--ctrl shift v to preview-->
+    <head>
+        <title>
+            MINECRAFT BLOG!!!!
+        </title>
+    </head>
+
+    <style>
+        html /*to make scrolling when someone clicks "about" smooth */
+        {
+            scroll-behavior: smooth;
+        }
+        body  /* special specifications/editing for body */
+        {
+            
+            background-image: url(https://store-images.s-microsoft.com/image/apps.60323.13950084616086229.56d90257-df96-4000-bf85-a64704b3b019.d4ae0460-e24a-41ce-9e09-a92dc478362f?mode=scale&q=90&h=1080&w=1920&format=jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* background-attachment: scroll; background image will scroll with the content. */
+            background-attachment: fixed; /*the image will be fixed and rest of the body will move...looks cool*/
+            margin: 0;
+            height:auto;
+            
+
+        }
+        
+
+        
+
+        
+
+        header
+         {
+            /* top: 0px; */
+            font-size: 55px;
+            background-image: url(https://i.imgur.com/0kwWo.png);
+            background-size: cover; /* Ensures background image covers the whole header */
+            /* background-position: ; Centers background image */
+            position: relative;
+            height: 390px; /* Set a height for the header */
+            margin-top: 100px;  
+        }
+
+        
+
+        .minecraft_title_center
+        {
+            text-align: center;
+            color: aliceblue;
+            
+            
+
+            
+
+        }
+        .minecraft_title_center a
+        {
+            
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 900;
+
+            color: aliceblue;
+            background-color: gray;
+            
+            text-decoration: none;
+            padding: 15px 30px;
+            text-shadow: 3px 4px 9px black;  /*adding some shadow to text (right down blur)*/
+
+            /* Add box-shadow to the background box */
+            box-shadow: 4px 4px 8px  rgba(0, 0, 0, 0.5); /* Horizontal, Vertical, Blur radius, Color */
+        
+
+            transition: 0.29s;
+            
+            
+            
+            
+        }
+        
+        .minecraft_title_center a:hover
+        {
+            
+            color: rgb(114, 114, 114);
+            background-color: rgba(0, 0, 0, 0.31);
+            text-shadow: 3px 4px rgb(53, 46, 46);
+
+            box-shadow: 4px 4px 10px inset rgba(0, 0, 0, 0.5); /* Horizontal, Vertical, Blur radius, insidebox, Color */
+
+            padding: 12px 27px;
+        }
+
+
+
+        .title_image img
+        {
+            width: 45%;
+            height: auto;
+            display: block;
+            margin: 0 auto; /* This centers the image horizontally */
+            margin-bottom: 50px;
+            padding-top: 20px;
+            
+            
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-top: 2px solid #555;
+        }
+
+        footer pre {
+            color: #ccc;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        footer h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 5px 0;
+        }
+
+        footer ul li a {
+            color: #00ff11;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .permanent_bar_on_top {
+            position: fixed; /* Keeps the bar fixed at the top */
+            top: 0;
+            width: 100%; /* Spans the entire width of the page */
+            background-color: rgba(38, 36, 35, 98%); /* Semi-transparent background */
+            height: 120px; /* Adjusted height for the top bar */
+            z-index: 1000; /* To keep it on top of other elements */
+            box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.447); /* Shadow for depth */
+            display: flex; /* Enables flexbox for layout */
+            align-items: center; /* Vertically centers all items */
+            justify-content: space-between; /* Distributes space between logo, input, and login */
+            /*padding: 0 10px;  Adds space on the left and right */
+        }
+
+        .permanent_bar_on_top img:first-child {
+            width: 80px; /* Logo image width */
+            height: auto; /* Maintains aspect ratio */
+            transition: 0.3s; /* Smooth hover effect */
+            /* position: absolute; messses everything */
+            left: 10px;
+        }
+
+        
+        .permanent_bar_on_top img:first-child:hover {
+            width: 90px; /* Enlarges logo on hover */
+            /* .permanent_bar_on_top p{transform: scale(1.25);} ...nope*/
+        }
+        
+        .permanent_bar_on_top p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: aliceblue; 
+            font-size: 13px; 
+            font-weight: bold; 
+            margin: 0; 
+            position: absolute; 
+            top: 100px; 
+            left: 10px; 
+            text-shadow: 2px 2px 4px black; 
+        }
+        .permanent_bar_on_top p:hover {
+            transform: scale(1.25); 
+        }
+
+        .permanent_bar_on_top input {
+            color:rgb(70, 69, 69);
+            width: 500px; /* Width of the search box */
+            height: 40px; /* Height of the search box */
+            /*padding: 5px 10px;  Inner padding for better spacing */
+            font-size: 16px; /* Adjust font size */
+            border: 1px solid #00ff11; /* Green border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+            text-align: center; /* Centers the placeholder and text inside */
+        }
+
+        .permanent_bar_on_top img:last-child {
+            width: 80px; /* Login icon width */
+            height: auto; /* Maintains aspect ratio */
+            transition: 0.3s; /* Smooth hover effect */
+        }
+
+        .permanent_bar_on_top img:last-child:hover {
+            width: 90px; /* Enlarges login icon on hover */
+        }
+                
+        
+        .thing_1
+        { 
+            height: 2000px;
+            background-color:rgb(23, 22, 21,90%);  /*LAST ARGUMENT IS FOR OPACITY*/
+            position: relative;
+            margin-top: 30px;
+        }
+                
+        .text_box2{position: relative;} /*to set image according with textbox*/
+        .text_box1 p
+        {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 190%;
+            position:absolute;
+
+            margin-top:50px;
+           
+            margin-left:35px;
+            color:rgb(211, 211, 211);
+            width: 60%;
+            height: auto;
+            border: 1px solid rgb(155, 159, 149);
+            border-radius: 0px; /* Rounded corners */
+            padding: 20px 20px;
+            word-spacing: 3px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            line-height: 40px;
+
+            
+        }
+
+        .thing_1 .image-right {
+        
+        position: relative;
+        top: 100px; /* Adjust spacing as needed */
+        right: 1.8%; /* Adjust spacing from the text box */
+        width: 30%; /* Set the size of the images */
+        height: auto;
+        float:right;
+        border-style: groove;
+        border-width: 10px;
+    }
+
+
+
+
+
+        .text_box2{position: relative;}
+
+        .text_box2 p
+        {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 190%;
+            position:absolute;
+
+            top:21cm;
+            right:35px;
+            
+            color:rgb(211, 211, 211);
+            width: 57%;
+            height: auto;
+            border: 1px solid rgb(155, 159, 149);
+            border-radius: 0px; /* Rounded corners */
+            padding: 20px 20px;
+            word-spacing: 3px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            line-height: 40px;
+
+            
+        }
+
+        .thing_1 .image-left{
+        
+        position: relative;
+        top: 44%; /* Adjust spacing as needed */
+        left: 4%; /* Adjust spacing from the text box */
+        width: 27%; /* Set the size of the images */
+        height: auto;
+        float: left;
+        border-style: groove;
+        border-width: 10px;
+        
+            
+    }
+        
+    .blocks_of_news {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow wrapping to the next row */
+        justify-content: space-between; /* Distribute space evenly between blocks */
+        align-items: center; /* Center items vertically */
+        background-color: rgb(28, 27, 34);
+        position: absolute;
+        bottom: 1%;
+        left: 1%;
+        width: 98%;
+        height: auto; /* Adjust height dynamically based on content */
+        padding: 10px; /* Add some padding around the container */
+        border-style: inset;
+        border-width: 4px;
+        border-color: red;
+    }
+
+    .newsblock {
+        flex: 1 1 calc(33% - 20px); /* Each block takes 1/3rd of the row with space */
+        margin: 10px; /* Add space between blocks */
+        max-width: calc(33% - 20px); /* Prevent blocks from growing too large */
+        height: 200px; /* Adjust the height of the blocks */
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: border for aesthetics */
+    }
+
+    .newsblock img {
+        width: 100%; /* Make image fill the block */
+        height: 100%; /* Scale the image to fill the block */
+        object-fit: cover; /* Prevent image distortion */
+    }
+
+    .newsblock .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%; /* Cover half the block */
+        background-color: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .newsblock:hover .overlay {
+        opacity: 1; /* Show overlay on hover */
+    }
+
+
+    .newsblock .overlay {
+        position: absolute;
+        bottom: 0; /* Start from the bottom */
+        left: 0;
+        width: 100%;
+        height: 50%; /* Cover half the block */
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease-in; /* Smooth transition */
+        display: flex; /* For centering content */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    </style>
+
+
+
+
+
+    <body> <!--Now that i have power of div and things....I replaced: <body style = "height: 2000px;and custom content"-->
+        
+        <div class = "permanent_bar_on_top">
+            <a href="minecraft gallery.html"><img src="mini_logo.png" alt="logo"></a>
+            <p>GALLERY</p>
+            <input type = "text" name="Search" placeholder= "Search Something">
+            <a href="minecraft login page.html"><img src="login.png" alt="login"></a>
+        </div>
+
+        <header>
+            
+
+
+            <div class = "title_image">
+                <!-- <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/logos/Global-Header_MCCB-Logo_300x51.svg"> -->
+                <a href="#"><img src="minecraftlogo.png"></a>
+            </div>
+
+                
+            <div class = "minecraft_title_center">
+                
+                
+                <!-- <a href="#" class = "navigation_links>">Games</a>
+                <a href="#" class = "navigation_links>" >MineWiki</a>
+                <a href="https://minecraft.wiki/" class = "navigation_link3>">Support</a>
+                <a href="#" class = "navigation_links>">About</a> -->
+                <a href="#">Games</a>
+                <a href="https://minecraft.wiki/">MineWiki</a>
+                <a href="https://minecraft.wiki/">Support</a>
+                <a href="#bottom">About</a>
+                
+            </div>
+            
+            <div class="minecraft_title_left">
+
+            </div>
+
+        </header>
+
+
+        <main>
+
+            <div class = "thing_1">
+                <img class="image-right" src="beautiful minecraft1.jpg" alt="Right Image 1" style = "top:5%;">
+                <img class="image-right" src="beautiful minecraft2.jpg" alt="Right Image 2" style="top: 18%;right:-29.8%;"> <!-- Offset from the first image -->
+
+                <div class = "text_box1">
+                    <p>Minecraft is a 2011 sandbox game developed and published by Swedish video game developer Mojang Studios. Originally created by Markus "Notch" Persson using the Java programming language, the first public alpha build was released on 17 May 2009. The game would be continuously developed from then on, receiving a full release on 18 November 2011. Afterwards, Persson left Mojang and gave Jens "Jeb" Bergensten control over development. In the years since its release, it has been ported to several platforms, including smartphones, tablets, and various video game consoles. In 2014, Mojang and the Minecraft intellectual property were purchased by Microsoft for US$2.5 billion. Minecraft is the best-selling video game of all time, with over 300 million copies sold and nearly 170 million monthly active players as of 2024. </p>
+                
+                
+                
+                </div>
+                <img class="image-left" src="beautiful minecraft3.jpg" alt="Left Image">
+                <div class = "text_box2">
+                    <p>Minecraft, a seemingly simple block-based game, offers players an unparalleled level of creative freedom, allowing them to build anything imaginable in a procedurally generated world, from humble houses to sprawling cities, all while navigating the challenges of survival against hostile creatures, making it a unique sandbox experience where every playthrough is different, fostering endless possibilities for exploration, construction, and even complex redstone engineering, captivating players of all ages with its open-ended gameplay and ability to bring their wildest ideas to life. </p>
+                
+                </div>
+
+
+
+
+
+                <div class="blocks_of_news">
+                    <!-- <center style=" font-size: 40;color: aliceblue; margin-top: 1%;">NEWS</center> -->
+
+                    <div class="newsblock">
+                        <img src="newsimg1.jpg" alt="news">
+                        <div class="overlay">A lot of Structures like these have been added to latest version of MC.</div>
+                    </div>
+
+                    <div class="newsblock">
+                        <img src="newsimg2.jpg" alt="news">
+                        <div class="overlay">Ya, I don't know What it is...hehe</div>
+                    </div>
+                    
+                    <div class="newsblock">
+                        <img src="newsimg3.jpg" alt="news">
+                        <div class="overlay">Just a while ago, MC released new cute varients of Pigs.</div>
+                    </div>
+
+                    <div class="newsblock">
+                        <img src="newsimg4.jpg" alt="news">
+                        <div class="overlay">Hahahaha...Get over here Zombieee!! Its time to DIE</div>
+                    </div>
+
+                    <div class="newsblock">
+                        <img src="newsimg5.jpg" alt="news">
+                        <div class="overlay">Look how lovely this cow is!!</div>
+                    </div>
+
+                    <div class="newsblock">
+                        <img src="newsimg6.jpg" alt="news">
+                        <div class="overlay">You know, Minecraft is one of my best Favourite games!</div>
+                    </div>
+
+
+                </div>
+            </div>
+            
+
+
+            
+
+            
+        
+        </main>
+        <hr>
+
+        <footer id="bottom">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>Email: <a href="mailto:my_mail.com">My_mail.com</a></li>
+                <li>Phone: +91 XXXX-XXXX-XX</li>
+                <li>Address: Baaju Waali Khidki</li>
+            </ul>
+
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="https://facebook.com">Facebook</a></li>
+                <li><a href="https://twitter.com">Twitter</a></li>
+                <li><a href="https://instagram.com">Instagram</a></li>
+            </ul>
+
+            <p>&copy; 2025 Minecraft Blog. All Rights Reserved By Shanks.</p>
+        </footer>
+
+
+    </body>
+
+
+</html>
