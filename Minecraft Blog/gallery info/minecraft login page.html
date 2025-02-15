@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lucida Sans', Arial, sans-serif;
+            background-image: url('https://store-images.s-microsoft.com/image/apps.60323.13950084616086229.56d90257-df96-4000-bf85-a64704b3b019.d4ae0460-e24a-41ce-9e09-a92dc478362f?mode=scale&q=90&h=1080&w=1920&format=jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        header {
+            background-color: rgba(34, 34, 34, 0.9);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        header img {
+            width: 200px;
+            height: auto;
+            transition: 0.3s;
+        }
+
+        header img:hover{
+            transform: scale(1.02);
+            /* box-shadow: 2px 2px 1px black; not looking good*/
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 100px);
+        }
+
+        .login-box {
+            background-color: rgba(23, 22, 21, 0.9);
+            border: 3px solid #4CAF50;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .login-box h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 16px;
+        }
+
+        .login-box input[type="text"]:focus,
+        .login-box input[type="password"]:focus {
+            outline: none;
+            border-color: #76FF03;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .login-box button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-box button:hover {
+            background-color: #76FF03;
+            transform: scale(1.1);
+        }
+
+        .login-box p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: lightgray;
+        }
+
+        .login-box a {
+            color: #76FF03;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-box a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="blog on minecraft.html"><img src="mclogo2.png" alt="Minecraft Logo"></a>
+    </header>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form>
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Minecraft Blog | All rights reserved.
+    </footer>
+</body>
+</html>
