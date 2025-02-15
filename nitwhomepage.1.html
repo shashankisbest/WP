@@ -1,0 +1,444 @@
+<html>
+    <head>
+        <title>
+            NIT W PAGE BY SHANKS
+        </title>
+
+        <style>
+            .topmost_bar {
+                background-color: rgb(43, 70, 117);
+                height: 5%;
+                margin-top: 0;
+                padding: 1%;
+                position: relative;
+            }
+
+            .topmost_bar .colmn1 {
+                position: absolute;
+                border: solid;
+                border-color: rgba(0, 0, 0, 0);
+                width: 50%;
+                height: 50%;
+                left: 0;
+                text-align: center;
+            }
+
+            .topmost_bar .colmn2 {
+                position: absolute;
+                border: solid;
+                border-color: rgba(0, 0, 0, 0);
+                width: 50%;
+                height: 50%;
+                right: 0;
+            }
+
+            /* Keyframes for typing animation */
+            @keyframes typing {
+                0% { width: 0; opacity: 1; }
+                50% { width: 100%; opacity: 1; }
+                80% { width: 100%; opacity: 1; }
+                100% { width: 100%; opacity: 0; }
+            }
+
+            .text_1 {
+                font-size: 150%;
+                color: white;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: 2px solid black;
+                width: 0;
+                animation: typing 5s steps(50, end) infinite;
+                animation-delay: 3s; /* Pause before restarting */
+                animation-duration: 8s; /* Total cycle time */
+            }
+            .social-icons a {
+                font-size: 20px;
+                margin: 0 10px;
+                color: white;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .social-icons a:hover {
+                color: yellow;
+            }
+
+
+            .box1{
+                display: flex;
+                justify-content: center; /*horizontally */
+                align-items: center; /*vertically */
+                padding:1%;
+            }
+
+            .box1 .nav_links
+            {
+                
+                list-style: none;
+                display: flex;  /*made everything appear in 1 row*/
+            }
+            
+            .box1 .nav_links li {
+            
+                position: relative;
+                margin: 0 15px;
+        }
+
+            .box1 .nav_links li a{
+                font-size: 150%;
+                text-decoration: none;
+            
+               
+        }
+
+
+        /* .nav_links .dropdown (to be more specific){ */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ceb1b14e;
+            list-style: none;
+            min-width: 150px;
+            /* transition: 0.3s; */
+
+            transform: translateY(-10px); /*by cgpt*/
+            transition: opacity 0.3s ease, transform 0.3s ease; /*by cgpt*/
+        }
+
+        .dropdown li {
+            margin: 0;
+        }
+
+        .dropdown a {
+            text-decoration: none;
+            padding-bottom: 10%;
+            color: rgb(0, 0, 0);
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #b9b9b914;
+        }
+
+        .nav_links li:hover .dropdown {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        marquee
+        {
+            border-top: solid blueviolet;
+            border-bottom: SOLID blueviolet;
+            
+            font-size: 150%;
+        }
+
+        /* image slider */
+        .container{
+            position: relative;
+        }
+        .container .wrapper{
+            width: 100%;
+            height: 75vh;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+            margin: 5rem auto;
+            overflow: hidden;
+        }
+        .container .wrapper-holder{
+            display: grid;
+            grid-template-columns: repeat(4, 100%);
+            height: 100%;
+            width: 100%;
+            animation: slider 30s ease-in-out infinite alternate;
+        }
+        .container #slider-img-1{
+            background-image: url(https://nitw.ac.in/api/static/files/Alumni_Association%E2%80%99s_Meet_2025-1-8-15-56-40.jpg);
+            background-position: center;
+            
+        }
+        .container #slider-img-2{
+            background-image: url(https://nitw.ac.in/api/static/files/Swachhata_Drive_2025-1-3-14-32-13.jpg);
+            background-position: center;
+            
+        }
+        .container #slider-img-3{
+            background-image: url(https://nitw.ac.in/api/static/files/Gold_Medal_2024-12-27-16-54-36.jpg);
+            background-position: center;
+            
+        }
+        .container #slider-img-4{
+            background-image: url(https://nitw.ac.in/api/static/files/Swachhata_Hi_Seva_campaign_2024-10-11-10-19-0.jpg);
+            background-position: center;
+            
+        }
+        .container .button-holder .button{
+            background-color: white;
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: .3rem;
+        }
+        .container .button-holder{
+            position: absolute;
+            left: 45%;
+            bottom: 0%;
+        }
+        .button:hover{
+            box-shadow: 0px 0px 7px 4px rgba(0, 255, 255, 0.6);
+        }
+        @keyframes slider{
+            0%{transform: translateX(0%);}
+            10%{transform: translateX(-100%);}
+            20%{transform: translateX(-100%);}
+            30%{transform: translateX(-200%);}
+            40%{transform: translateX(-200%);}
+            50%{transform: translateX(-200%);}
+            60%{transform: translateX(-300%);}
+            70%{transform: translateX(-300%);}
+            80%{transform: translateX(-300%);}
+            90%{transform: translateX(0%);}
+            100%{transform: translateX(0%);}
+        }
+
+        /* image slider end */
+
+        .news_events {
+            background-color: rgba(255, 0, 0, 0);
+            margin-top: 10%;
+            height: auto; 
+            display: flex; /* to make side-by-side */
+            justify-content: space-around; /* a little even distribution */
+            padding: 2%;
+        }
+
+        .scrollable-box {
+            font-size: 300%;
+            width: 30%; 
+            height: 500px; 
+            overflow-y: auto; /* virticle scrolling aquired */
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        /* -----------------news box and events----------------------- */
+        .news-events-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f3f3f3;
+        }
+
+        .news-box {
+            background-color: white;
+            padding: 20px;
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .news-box:hover {
+            transform: scale(1.03);
+        }
+
+        .news-box h2 {
+            color: black;
+            border-bottom: 3px solid red;
+            padding-bottom: 5px;
+        }
+
+        .news-content p {
+            font-size: 150%;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .news-content p strong {
+            color: red;
+        }
+        </style>
+    </head>
+
+    <body>
+        <div class="topmost_bar">
+            <div class="colmn1">
+                <span class="text_1">Welcome to National Institute Of Technology Warangal</span>
+            </div>
+            <div class="colmn2">
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank">FB</a>
+                    <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                    <a href="https://www.instagram.com" target="_blank">Insta</a>
+                    <a href="https://www.youtube.com" target="_blank">Youtube</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box1">
+            <a href="https://www.nitw.ac.in/"><img src="https://www.nitw.ac.in/images/NITW_logo_telugu3.png" alt="logo">
+            </a>
+        </div>
+        <div class="box1">
+            <ul class="nav_links">
+                
+                <li><a href="#">home</a></li>
+
+                <li><a href="#">Administration</a>
+
+                    <ul class="dropdown">
+                    
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+
+                    </ul>
+
+
+                </li>
+
+                <li><a href="#">Academics</a>
+                    
+                    <ul class="dropdown">
+                    
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+
+                    </ul>
+                
+                
+                </li>
+
+                <li><a href="#">Departments</a>
+                    
+                    <ul class="dropdown">
+                    
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+
+                    </ul>
+                
+                </li>
+
+                <li><a href="#">Students</a>
+                    
+                    <ul class="dropdown">
+                    
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+
+                    </ul>
+                
+                </li>
+
+            </ul>
+        </div>
+<!-- image slider -->
+
+        <div class="container">
+            <div class="wrapper">
+                <div class="wrapper-holder">
+                    <div id="slider-img-1"></div>
+                    <div id="slider-img-2"></div>
+                    <div id="slider-img-3"></div>
+                    <div id="slider-img-4"></div>
+                </div>
+            </div>
+            <div class="button-holder">
+                <a href="#slider-img-1" class="button"></a>
+                <a href="#slider-img-2" class="button"></a>
+                <a href="#slider-img-3" class="button"></a>
+                <a href="#slider-img-4" class="button"></a>
+            </div>
+        </div>
+
+<!-- image slider end -->
+
+
+        <marquee behavior="scroll" direction="left" scrollamount="10">
+            Notice1: Aaj mess me  aaloo pakoda bana hai
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Notice2: Latest spring spree me Sir Sharukh Khan aane waala hai
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Notice3: Aaj shaam Director Sir firr apni boring speech dene waale hain.
+        </marquee>
+
+        <div class="news_events">
+
+            <div class="scrollable-box">
+                bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow
+                bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow 
+                bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow
+                bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow 
+                bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow
+                bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow 
+                bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow
+                bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow bhow
+                
+            </div>
+
+            <div class="scrollable-box">
+                meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow
+                meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow 
+                meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow
+                meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow 
+                meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow
+                meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow 
+                meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow
+                meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow 
+            </div>
+
+            <div class="scrollable-box">
+                hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha
+                hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha
+                hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha
+                hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha
+                hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha
+                hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha
+                hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha hahahaha
+                hahahaha
+
+            </div>
+
+        </div>
+        <!-- news box -->
+
+        <div class="news-events-container">
+            <div class="news-box">
+                <h2>Notices</h2>
+                <div class="news-content">
+                    <p><strong>Notice -</strong> List of candidates shortlisted for Group 'A' and 'B' posts.</p>
+                    <p><strong>Pattern of Examination -</strong> Released for Group 'B' & 'C'.</p>
+                    <p><strong>Book Fair - 2025</strong> (30-31 Jan 2025)</p>
+                </div>
+            </div>
+        
+            <div class="news-box">
+                <h2>Workshops & Conferences</h2>
+                <div class="news-content">
+                    <p><strong>10 Days Online FDP -</strong> Translating AI & ML Innovations.</p>
+                    <p><strong>FACULTY DEVELOPMENT PROGRAMME -</strong> "Power Electronics Technology".</p>
+                </div>
+            </div>
+        
+            <div class="news-box">
+                <h2>Tenders</h2>
+                <div class="news-content">
+                    <p><strong>PROSHOW NIGHT – SPRING SPREE 2025</strong> - Tender document.</p>
+                    <p><strong>Supply of "CONSUMABLES"</strong> - CPPP Tender Document.</p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
