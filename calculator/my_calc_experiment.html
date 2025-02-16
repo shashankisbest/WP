@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>This_is_My_Calculator</title>
+    </head>
+
+<style>
+    .outermost_box /*bas itna hi hota hai..make sections and edit in them step wise, level wise, haule haule.*/
+    {
+        margin-top: 5%;
+        margin-left: 35%;
+        background-color: rgb(36, 34, 34);
+        width:30%;
+        height:80%;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: rgba(231, 90, 39, 0.842);
+        border-width: 2px;
+    }
+
+    .display_screen
+    {
+        background-color: rgba(61, 56, 56, 0.356);
+        margin-top: 6%;
+        margin-left: 5%;
+        width:90%;
+        height: 16%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        box-shadow: 3px 3px 3px inset black;
+    }
+
+    .all_buttons_container
+    {
+        background-color: rgba(14, 190, 235, 0.966); /*temporary colour that will be removed at last */
+        margin-top: 6%;
+        margin-left: 5%;
+        width:90%;
+        height:70%;
+        position: relative; /* Important to use for absolute positioning inside */
+
+        /* after playing this positioning move, all the absolute positions for divs (defined all buttons container) will be like...the space inside all_buttons_container is the entire screen for them ABSOLUTE. */
+        
+    }
+
+    .horizontal_operations
+    {
+        background-color: rgba(21, 255, 0, 0.356);
+        width:100%;
+        height: 20%;
+        
+        
+    }
+    .horizontal_operations button
+    {
+        font-size: 10%;
+        display: inline;
+        width:calc(100% /  4.6);
+        
+        
+        
+    }
+
+    
+
+    .vertical_operations
+    {
+        background-color: rgba(47, 0, 255, 0.356);
+        position:absolute; /*able to use because I set relative position in all buttons container*/
+
+        right:0px;
+        width:25%;
+        height: 80%;
+        
+    }
+
+    .numbers
+    {
+        background-color: pink;
+        position: absolute;
+        bottom:0;
+        width:75%;
+        height:80%;
+    }
+
+
+</style>
+
+
+
+
+    <body>
+        <div class="outermost_box">
+            <div class="display_screen">
+
+            </div>
+
+            <div class="all_buttons_container">
+
+                <div class="horizontal_operations">
+                    <button>AC</button>
+                    <button>()</button>
+                    <button>%</button>
+                    <button>/</button>
+                </div>
+
+                <div class="vertical_operations">
+
+                </div>
+                
+                <div class="numbers">
+
+                </div>
+
+                
+
+                
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </body>
+</html>

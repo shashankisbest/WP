@@ -1,0 +1,189 @@
+<html>
+<head>
+    <title>This_is_My_Calculator</title>
+    <style>
+        /* Main outer container */
+        .outermost_box {
+            margin-top: 5%;
+            margin-left: 35%;
+            background-color: rgb(36, 34, 34);
+            width: 30%;
+            height: 80%;
+            border-radius: 20px;
+            border-style: solid;
+            border-color: rgba(231, 90, 39, 0.842);
+            border-width: 2px;
+        }
+
+        /* Display screen style */
+        .display_screen {
+            background-color: rgba(61, 56, 56, 0.356);
+            margin-top: 6%;
+            margin-left: 5%;
+            width: 90%;
+            height: 16%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            box-shadow: 3px 3px 3px inset black;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 10px;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Container for all buttons */
+        .all_buttons_container {
+            background-color: rgba(14, 191, 235, 0);
+            margin-top: 6%;
+            margin-left: 5%;
+            width: 90%;
+            height: 70%;
+            position: relative; /* Enable absolute positioning for child elements */
+        }
+
+        /* Style for the horizontal operations row */
+        .horizontal_operations {
+            background-color: rgba(21, 255, 0, 0);
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+        }
+
+        .horizontal_operations button {
+            font-size: 16px;
+            width: 20%;
+            height: 100%;
+            background-color: #e77517;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .horizontal_operations button:hover {
+            background-color: #ddd;
+        }
+
+        /* Style for the vertical operations column */
+        .vertical_operations {
+            background-color: rgba(47, 0, 255, 0);
+            position: absolute;
+            right: 0;
+            width: 25%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 5px;
+        }
+
+        .vertical_operations button {
+            font-size: 16px;
+            height: 20%;
+            width: 100%;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .vertical_operations button:hover {
+            background-color: #ddd;
+        }
+
+        /* Style for the number pad */
+        .numbers {
+            background-color: rgba(255, 192, 203, 0);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 75%;
+            padding: 5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        .numbers button {
+            font-size: 16px;
+            height: 50px;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .numbers button:hover {
+            background-color: #ddd;
+        }
+
+        .display_screen_scree{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .display_screen input{
+            font-size: 300%;
+            text-align: right;
+            width:1000;
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0);
+            color:pink;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="outermost_box">
+        <div class="display_screen">
+            <!-- Display screen (empty for now) -->
+             <input type="text" name="display_screen" readonly>
+
+        </div>
+
+        <div class="all_buttons_container">
+
+            <!-- Horizontal operation buttons -->
+            <div class="horizontal_operations">
+                <button>AC</button>
+                <button>()</button>
+                <button>%</button>
+                <button>/</button>
+            </div>
+
+            <!-- Vertical operation buttons (on the right side) -->
+            
+
+            <!-- Number pad buttons -->
+            <div class="numbers">
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>CROSS</button>
+
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>*</button>
+
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>-</button>
+
+                <button>0</button>
+                <button>.</button>
+                <button>=</button>
+                <button>+</button>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
