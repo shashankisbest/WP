@@ -1,0 +1,192 @@
+<html>
+<head>
+    <title>This_is_My_Calculator</title>
+    <style>
+        body{
+            background-image: url(https://i1.pickpik.com/photos/97/10/329/blue-lights-background-light-blue-background-preview.jpg);
+            
+            background-size: cover;
+        }
+        /* Main outer container */
+        .outermost_box {
+            box-shadow: 10px 40px 100px black;
+            margin-top: 5%;
+            margin-left: 35%;
+            background-color: rgb(36, 34, 34);
+            width: 30%;
+            height: 80%;
+            border-radius: 20px;
+            border-style: solid;
+            border-color: rgba(231, 90, 39, 0.842);
+            border-width: 2px;
+        }
+
+        .outermost_box p{
+            opacity: 0.5;
+            font-style: italic;
+            font-size: 180%;
+            font-weight: bold;
+            color: rgba(36, 237, 46, 0.42);
+            position: absolute;
+            margin: 0;
+            left:43%;
+            
+        }
+
+        /* Display screen style */
+        .display_screen {
+            background-color: rgba(61, 56, 56, 0.356);
+            margin-top: 6%;
+            margin-left: 4%;
+            width: 90%;
+            height: 16%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            box-shadow: 3px 3px 3px inset black;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 10px;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Container for all buttons */
+        .all_buttons_container {
+            background-color: rgba(14, 191, 235, 0);
+            margin-top: 6%;
+            margin-left: 5%;
+            width: 90%;
+            height: 70%;
+            position: relative; /* Enable absolute positioning for child elements */
+        }
+
+        /* Style for the horizontal operations row */
+        .horizontal_operations {
+            background-color: rgba(21, 255, 0, 0);
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+        }
+
+        .horizontal_operations input {
+            box-shadow: 3px 3px 3px black;
+
+            font-size: 20px;
+            width: 24%;
+            height: 100%;
+            background-color: #e77517;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .horizontal_operations input:hover {
+            box-shadow: -3px -3px 3px inset black;
+            background-color: #ddd;
+        }
+              
+        
+        /* Style for the number pad */
+        .numbers {
+            border-radius: 30px;
+            background-color: rgba(255, 192, 203, 0);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 75%;
+            padding: 5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        
+        .numbers input {
+            box-shadow: 3px 3px 3px black;
+            font-size: 20px;
+            height: 90%;
+            background-color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .numbers input:hover {
+            box-shadow: -3px -3px 3px inset black;
+
+            background-color: #ddd;
+        }
+
+        .display_screen{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .display_screen input{
+            font-size: 230%;
+            text-align: right;
+            width:99%;
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0);
+            color:rgba(203, 135, 135, 0.735);
+            border: none;
+        }
+
+        .numbers .op{
+            background-color: #e77517;
+        }
+    </style>
+</head>
+<body>
+    <div class="outermost_box">
+        <p>shanks's Calculator</p>
+        <div class="display_screen">
+            <!-- Display screen (empty for now) -->
+             <input type="text" id = "display_screen" name="display_screen" readonly>
+
+        </div>
+
+        <div class="all_buttons_container">
+
+            <!-- Horizontal operation buttons -->
+            <div class="horizontal_operations">
+                <input type="button" onclick="display_screen.value = '' " value="AC">
+                <input type="button" onclick="display_screen.value += '&#928;' " value="&#928;">
+                <input type="button" onclick="display_screen.value += '%' " value="%">
+                <input type="button" onclick="display_screen.value += '/' " value="/">
+            </div>
+
+            <!-- Vertical operation buttons (on the right side) -->
+            
+
+            <!-- Number pad buttons -->
+            <div class="numbers">
+                <input type="button" value="7" onclick="display_screen.value += '7' " >
+                <input type="button" onclick="display_screen.value += '8' " value="8">
+                <input type="button" onclick="display_screen.value += '9' " value="9">
+                <input type="button" class = "op" onclick="display_screen.value = display_screen.value.toString().slice(0,-1)" value="C">
+
+                <input type="button" onclick="display_screen.value += '4' " value="4">
+                <input type="button" onclick="display_screen.value += '5' " value="5">
+                <input type="button" onclick="display_screen.value += '6' " value="6">
+                <input type="button" class = "op" onclick="display_screen.value += '*' " value="*">
+
+                <input type="button" onclick="display_screen.value += '1' " value="1">
+                <input type="button" onclick="display_screen.value += '2' " value="2">
+                <input type="button" onclick="display_screen.value += '3' " value="3">
+                <input type="button" class = "op" onclick="display_screen.value += '-' " value="-">
+
+                <input type="button" onclick="display_screen.value += '0' " value="0">
+                <input type="button" onclick="display_screen.value += '.' " value=".">
+                <input type="button" onclick="display_screen.value = eval(display_screen.value) " value="=">
+                <input type="button" class = "op" onclick="display_screen.value += '+' " value="+">
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
