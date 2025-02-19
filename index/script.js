@@ -34,14 +34,21 @@ function appendMovie() {
 function clearlist() {
     movies = [];
     display_movies();
+    number_of_movies = 0;
+    document.getElementById("movies_count").textContent = number_of_movies;
 }
 
 function removelastmovie() {
     movies.pop();
     display_movies();
+    if(number_of_movies != 0)
+        {number_of_movies -= 1;}
+    document.getElementById("movies_count").textContent = number_of_movies;
 }
 
 function removeMovie(index) {
     movies.splice(index, 1);
+    number_of_movies -= 1;
     display_movies();
+    document.getElementById("movies_count").textContent = number_of_movies;
 }
