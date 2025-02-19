@@ -4,8 +4,8 @@ body{
      */
 
     background-image: url(https://as2.ftcdn.net/v2/jpg/12/35/26/49/1000_F_1235264961_L7mjq2jPygKNM4SR1t5Ewb3DItVdMHEt.jpg);
-    /* background-repeat: no-repeat;
-    background-size: cover; */
+    background-repeat: no-repeat;
+    background-size: cover;
     /* width: 200%; */
 
 }
@@ -32,11 +32,13 @@ body{
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transform: scale3d(1,1,1);
+    transition: 0.3s ease;
 }
 
 .add_movie button:hover {
     background-color: #45a049;
+    transform: scale3d(1.1,1.1,1.1);
 }
 
 .add_movie button:focus {
@@ -53,10 +55,13 @@ body{
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin:3%;
+    transform: scale3d(1,1,1);
+    transition: 0.3s ease;
 }
 
 .clear_buttons button:hover {
     background-color: #45a049;
+    transform: scale3d(1.1,1.1,1.1);
 }
 
 .clear_buttons button:focus {
