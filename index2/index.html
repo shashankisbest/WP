@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Movie Index</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+
+</head>
+
+
+<body>
+    
+    <div class ="outermost_box">
+        <center>
+        <p>MOVIE LIST!!!</p>
+        <div class ="input_box">
+            <label for="movie_input">Movie Name:</label>
+            <input type="text" name ="movie_input" id="movie_input" placeholder="Movie Name">
+
+
+            <!-- <label for="movie_input">Movie Name:</label>
+            <input type="text" placeholder="Movie Name">
+            
+            i will deal with them later
+
+            <label for="movie_input">Movie Name:</label>
+            <input type="text" placeholder="Movie Name"> -->
+
+        </div>
+
+
+        <p>Number of Movies: <span id="movies_count">0</span> </p>
+
+        <div class="add_movie">
+            <button onclick="appendMovie()">Add Movie</button>
+        </div>
+        
+        
+        <div class="clear_buttons">
+            <button onclick="clearlist()">Clear list</button>
+            <button onclick="removelastmovie()">Remove Last Movie</button>
+        </div>
+        
+    </center>
+    
+</div>
+
+
+    <div class="display_movie_list">
+        <ul id="movieList">
+            
+        </ul>
+    </div>
+
+    <!-- ------------------script------------------------ -->
+     <script src="script.js"></script>
+
+
+
+</body>
+
+
+</html>
