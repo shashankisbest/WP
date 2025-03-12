@@ -42,14 +42,14 @@ class Cart {
             cartItemDiv.innerHTML = `
                 <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                 <p>${item.name}</p>
-                <p>Price: $${item.price}</p>
+                <p>Price: Rs.${item.price}</p>
                 <button class="remove-btn" onclick="cart.removeItem(${item.id})">Remove</button>
             `;
             cartContainer.appendChild(cartItemDiv);
         });
 
         // Display the total price
-        totalPriceContainer.textContent = `Total: $${this.totalPrice.toFixed(2)}`;
+        totalPriceContainer.textContent = `Total: Rs.${this.totalPrice.toFixed(2)}`;
     }
 }
 
@@ -64,7 +64,7 @@ const products = [
 // Create cart instance
 const cart = new Cart();
 
-// Add event listeners to Add to Cart buttons
+//WHAT WILL ADD TO CART BUTTON DO
 document.querySelectorAll('.addtocart').forEach((button, index) => {
     button.addEventListener('click', function() {
         cart.addItem(products[index]);
@@ -75,3 +75,23 @@ document.querySelectorAll('.addtocart').forEach((button, index) => {
 document.getElementById("toggleBtn").addEventListener("click", function() {
     document.getElementById("sidebar").classList.toggle("collapsed");
 });
+
+
+function toggletheme(){
+    let currtheme = document.getElementById("theme").innerText;
+
+    if(currtheme == "Light-mode")
+    {
+
+        document.getElementById("theme").textContent = "Dark-mode";
+    }
+    
+    else if(currtheme == "Dark-mode")
+    {
+
+        document.getElementById("theme").textContent = "Light-mode";
+    }
+
+}
+
+document.getElementById("theme").addEventListener("click",toggletheme())
