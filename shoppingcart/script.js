@@ -55,10 +55,10 @@ class Cart {
 
 // Create products
 const products = [
-    new Product(1, 'Product 1', 25.99, './itemimages/item1.jpg'),
-    new Product(2, 'Product 2', 35.99, './itemimages/item2.webp'),
-    new Product(3, 'Product 3', 45.99, './itemimages/item3.webp'),
-    new Product(4, 'Product 4', 55.99, './itemimages/item4.webp')
+    new Product(1, 'Product 1', 25.99, './itemimages/item1.jfif'),
+    new Product(2, 'Product 2', 35.99, './itemimages/item2.jfif'),
+    new Product(3, 'Product 3', 45.99, './itemimages/item3.jfif'),
+    new Product(4, 'Product 4', 55.99, './itemimages/item4.jfif')
 ];
 
 // Create cart instance
