@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mera Ammajone</title>
+    <link rel="stylesheet" href="styless.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>User Menu</h2>
+        <a href="login_page.html">Login / Sign Up</a>
+        <a href="#profile">Profile</a>
+        <a href="#settings">Settings</a>
+        <a href="#logout">Logout</a>
+    </div>
+    <button class="toggle-btn" id="toggleBtn">☰</button>
+    <div class="content">
+        <header>
+            <div class="marquee">
+                <marquee>New Items added ad a DECENT Price!!</marquee>
+            </div>
+            <nav>
+                <div class="logo">
+                    <img src="" alt="Logo" class="logo-img">
+                </div>
+                <div class="menu">
+                    <a href="#home">Home</a>
+                    <a href="#shop">Shop</a>
+                    <!-- <a href="item_upload_process.html">Sell</a> -->
+                    <a href="#giveaway">Cart</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+        
+        
+        <section class="availitems" id="availitems">
+            <h2>Available Items</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="./itemimages/item1.jpg" alt="Item 1">
+                    <button class="addtocart">Add To Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="./itemimages/item2.webp" alt="Item 2">
+                    <button class="addtocart">Add To Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="./itemimages/item3.webp" alt="Item 3">
+                    <button class="addtocart">Add To Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="./itemimages/item4.webp" alt="Item 4">
+                    <button class="addtocart">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+        <!-- Cart Section -->
+        <section class="cart" id="cart">
+            <h2>Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div id="totalPrice">Total: Rs.0.00</div>
+        </section>
+
+        
+        <footer>
+            <p>&copy; 2025 Ammajone. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js">
+       
+    </script>
+</body>
+</html>
