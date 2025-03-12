@@ -32,10 +32,10 @@ class Cart {
         const cartContainer = document.getElementById('cartItems');
         const totalPriceContainer = document.getElementById('totalPrice');
         
-        // Clear the current cart display
+        //resetting the cart and utting all the latest list
         cartContainer.innerHTML = '';
 
-        // Add each item in the cart to the display
+        
         this.items.forEach(item => {
             const cartItemDiv = document.createElement('div');
             cartItemDiv.classList.add('cart-item');
@@ -48,7 +48,7 @@ class Cart {
             cartContainer.appendChild(cartItemDiv);
         });
 
-        // Display the total price
+        // total price
         totalPriceContainer.textContent = `Total: Rs.${this.totalPrice.toFixed(2)}`;
     }
 }
@@ -61,7 +61,7 @@ const products = [
     new Product(4, 'Product 4', 55.99, './itemimages/item4.jfif')
 ];
 
-// Create cart instance
+
 const cart = new Cart();
 
 //WHAT WILL ADD TO CART BUTTON DO
