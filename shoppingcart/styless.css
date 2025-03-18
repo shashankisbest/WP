@@ -7,6 +7,51 @@ body {
     color: #333;
 }
 
+/*-------------- timer------------- */
+.timer-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+#timer {
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    font-weight: bold;
+}
+button {
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#startPause {
+    background-color: #28a745;
+    color: white;
+}
+#startPause:hover {
+    background-color: #218838;
+}
+#reset {
+    background-color: #dc3545;
+    color: white;
+}
+#reset:hover {
+    background-color: #c82333;
+}
+
+
+
+/* ---------------------- */
+
 header {
     background: #2c3e50;
     color: white;
