@@ -177,3 +177,47 @@ function resetTimer() {
 startPauseButton.addEventListener("click", startPauseTimer);
 resetButton.addEventListener("click", resetTimer);
 // --------------------------------------
+
+
+
+
+// -------theme toggle-------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Check for saved theme in localStorage
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+    }
+
+    // Toggle theme and save preference
+    toggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode")  ;
+        localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+    });
+});
+
+// --------------------------------------
+
+
+// light box
+
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const galleryImages = document.querySelectorAll(".gallery-img");
+
+    galleryImages.forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.classList.add("active");
+            lightboxImg.src = img.src;
+        });
+    });
+
+    lightbox.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+    });
+});
+

@@ -7,6 +7,89 @@ body {
     color: #333;
 }
 
+/* ------------------theme------------------- */
+
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #000;
+    --button-bg: #28a745;
+    --button-text: white;
+}
+
+.dark-mode {
+    --background-color: #1e1e1e;
+    --text-color: #fff;
+    --button-bg: #6c757d;
+    --button-text: #fff;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: 0.3s ease-in-out;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: var(--button-bg);
+    color: var(--button-text);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: var(--button-text);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--button-text);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* ------------------------------------- */
+
+
+
+.lightbox {
+    z-index: 1000;
+
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid white;
+    transform: scale(1.2);
+}
+
+
+.lightbox.active {
+    z-index: 1000;
+
+    display: flex;
+}
+
 /*-------------- timer------------- */
 .timer-container {
     background: white;
