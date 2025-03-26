@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Digital Alarm</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the best alarm in existance</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <p class="">Date:</p>
-        <input class="display_screen_date" id="date" type="text" class="date" readonly>
+<body class="light-theme">
+    <div class="theme-switcher">
+        <button class="theme-btn" data-theme="light">Light</button>
+        <button class="theme-btn" data-theme="dark">Dark</button>
+        <button class="theme-btn" data-theme="neon">Neon</button>
+        <button class="theme-btn" data-theme="custom">Custom</button>
     </div>
-    <div class="container">
-        <center>
-            <div class="timer-container" id="timer-container">
-                <input type="text" name="timer" id="timer" placeholder="00:00:00"><br>
-                <button id="startPause">Start</button>
-                <button id="reset">Reset</button>
-            </div>
-        </center>
-    </div>
-    <div class="container">
-        <center>
-            <button class="theme" id="light">Light</button>
-            <button class="theme" id="dark">Dark</button>
-            <button class="theme" id="neon">Neon</button>
-            <input type="text" class="display_screen" placeholder="00:00:00" readonly>
-            <div class="set_alarm">
-                <select name = "hrs" id = "hrs">   
-                    <option value="0" selected>00</option>
-                    <option value="1" >01</option>
-                    <option value="2" >02</option>   
-                    <option value="3" >03</option>
-                    <option value="4" >04</option>
-                    <option value="5" >05</option>
-                    <option value="6" >06</option>
-                    <option value="7" >07</option>
-                    <option value="8" >08</option>
-                    <option value="9" >09</option>
-                    <option value="10" >10</option>
-                    <option value="11" >11</option>
-                    <option value="12" >12</option>
-                </select>
 
+    <div class="main-container">
+        <!---------------------------------- Date Display------------------------ -->
+        <div class="date-container">
+            <p>Date:</p>
+            <input class="display-screen date-display" id="date" type="text" readonly>
+        </div>
+        
+        <!---------------------------------- Digital Clock------------------------ -->
+        <div class="clock-container">
+            <input type="text" class="display-screen clock-display" placeholder="00:00:00" readonly>
+        </div>
+        
+        <!---------------------------------- Alarm Section------------------------ -->
+        <div class="alarm-container">
+            <div class="set-alarm">
+                <select name="hrs" id="hrs">   
+                    <option value="0" selected>00</option>
+                    <option value="1">01</option>
+                    <option value="2">02</option>   
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
 
                 <select name="minutes" id="minutes">
                     <option value="00" selected>00</option>
@@ -105,29 +108,50 @@
                     <option value="59">59</option>
                 </select>
                 
-
                 <select name="ampm" id="ampm">
-                    <option value="1">am</option>
-                    <option value="2">pm</option>
+                    <option value="1">AM</option>
+                    <option value="2">PM</option>
                 </select>
-                <button class="set_alarm_button" onclick="appendalarm()">Set Alarm</button>
+                <button class="set-alarm-btn" id="setAlarm">Set Alarm</button>
             </div>
             
-            
-        </center>
-            <div class="alarm_list">
-                <ul id="myalarms">
-                    <li>sample <button class="deletebutton">Delete</button></li>
+            <div class="alarm-list">
+                <h3>Alarms</h3>
+                <ul id="alarmList">
+                    <li class="no-alarms">No Alarms set yet</li>
                 </ul>
             </div>
+        </div>
 
+        <!---------------------------------- Stopwatch Section------------------------ -->
+        <div class="stopwatch-container">
+            <h3>Stopwatch</h3>
+            <input type="text" class="display-screen stopwatch-display" value="00:00:00" readonly>
+            <div class="stopwatch-controls">
+                <button id="startStopwatch">Start</button>
+                <button id="pauseStopwatch">Pause</button>
+                <button id="resetStopwatch">Reset</button>
+            </div>
+        </div>
 
-
-
-
-
+        <!-----------------------------Countdown Timer------------ -->
+        <div class="countdown-container">
+            <h3>Countdown Timer</h3>
+            <input type="text" class="display-screen countdown-input" placeholder="MM:SS" id="countdownInput">
+            <input type="text" class="display-screen countdown-display" value="00:00:00" readonly id="countdownDisplay">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="countdown-controls">
+                <button id="startCountdown">Start</button>
+                <button id="pauseCountdown">Pause</button>
+                <button id="resetCountdown">Reset</button>
+            </div>
+        </div>
     </div>
-    
+
+    <!-- --------------------Alarm Sound--------------------------- -->
+    <audio id="alarmSound" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" preload="auto"></audio>
 
     <script src="script.js"></script>
 </body>
