@@ -103,6 +103,10 @@ let time = 0;
 let isRunning = false;
 
 const timerDisplay = document.getElementById("timer");
+const timer_container = document.getElementById("timer-container");
+// window.onload = function(){ timer_container.style.backgroundColor = "white"};
+
+
 const startPauseButton = document.getElementById("startPause");
 const resetButton = document.getElementById("reset");
 
@@ -129,12 +133,15 @@ function updateTimerDisplay() {
     timerDisplay.value = formatTime(time);
     if (time > 10) {
         timerDisplay.style.backgroundColor = "#28a745";
+        timer_container.style.backgroundColor = "#28a745";
         timerDisplay.style.color = "white";
     } else if (time > 5) {
         timerDisplay.style.backgroundColor = "#ffc107";
+        timer_container.style.backgroundColor = "#ffc107";
         timerDisplay.style.color = "black";
     } else {
         timerDisplay.style.backgroundColor = "#dc3545";
+        timer_container.style.backgroundColor = "#dc3545";
         timerDisplay.style.color = "white";
     }
 }
@@ -220,4 +227,3 @@ document.addEventListener("DOMContentLoaded", () => {
         lightbox.classList.remove("active");
     });
 });
-
