@@ -3,7 +3,10 @@ const themeButtons = document.querySelectorAll('.theme-btn');
 const body = document.body;
 const clockDisplay = document.querySelector('.clock-display');
 const dateDisplay = document.getElementById('date');
-const alarmSound = document.getElementById('alarmSound');
+
+//ya, these links are from chatgpt
+const alarmSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
+const timerSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3');
 
 // Alarm Elements
 const setAlarmBtn = document.getElementById('setAlarm');
@@ -34,7 +37,7 @@ let stopwatchRunning = false;
 let countdownInterval;
 let countdownTime = 0;
 let countdownRunning = false;
-let originalCountdownTime = 0;
+let originalcdtime = 0;
 
 // Initialize the application
 function init() {
@@ -45,18 +48,18 @@ function init() {
     setupEventListeners();
 }
 
-//settin up all eventlistenrs
+// Setting up all event listeners
 function setupEventListeners() {
     // Theme switching
     themeButtons.forEach(button => {
         button.addEventListener('click', switchTheme);
     });
 
-    // Alarm fns
+    // Alarm functions
     setAlarmBtn.addEventListener('click', setAlarm);
     document.addEventListener('keypress', handleKeyPress);
 
-    // Stopwatch 
+    // Stopwatch controls
     startStopwatchBtn.addEventListener('click', startStopwatch);
     pauseStopwatchBtn.addEventListener('click', pauseStopwatch);
     resetStopwatchBtn.addEventListener('click', resetStopwatch);
@@ -67,7 +70,7 @@ function setupEventListeners() {
     resetCountdownBtn.addEventListener('click', resetCountdown);
 }
 
-// Theme 
+// Theme switching
 function switchTheme(e) {
     const theme = e.target.dataset.theme;
     body.className = `${theme}-theme`;
@@ -80,7 +83,7 @@ function switchTheme(e) {
     }
 }
 
-// Clock 
+// Clock functions
 function updateClock() {
     const now = new Date();
     let hours = now.getHours();
@@ -88,9 +91,9 @@ function updateClock() {
     const seconds = String(now.getSeconds()).padStart(2, '0');
     const ampm = hours >= 12 ? 'PM' : 'AM';
     
-    // Converting to 12-hour format
+    // Convert to 12-hour format
     hours = hours % 12;
-    hours = hours ? hours : 12; // Convert 0 to 12
+    hours = hours ? hours : 12;
     hours = String(hours).padStart(2, '0');
     
     // Add blinking effect to colon
@@ -108,7 +111,7 @@ function updateDate() {
     dateDisplay.value = now.toLocaleDateString(undefined, options);
 }
 
-// Alarm Functions
+// Enhanced Alarm Functions with Sound
 function checkAlarms(currentTime) {
     alarms.forEach(alarm => {
         const alarmTime = `${alarm.time} ${alarm.ampm}`;
@@ -119,13 +122,13 @@ function checkAlarms(currentTime) {
 }
 
 function triggerAlarm(alarm) {
-    // Mark alarm as triggered
     alarm.triggered = true;
     
-    // Play alarm sound
+    // Play alarm sound in loop
+    alarmSound.loop = true;
     alarmSound.play();
     
-    // Visual feedback
+    
     clockDisplay.classList.add('shake');
     
     // Show alert with snooze option
@@ -139,6 +142,7 @@ function triggerAlarm(alarm) {
 function stopAlarm() {
     alarmSound.pause();
     alarmSound.currentTime = 0;
+    alarmSound.loop = false;
     clockDisplay.classList.remove('shake');
 }
 
@@ -146,7 +150,7 @@ function snoozeAlarm() {
     stopAlarm();
     
     const now = new Date();
-    const snoozeTime = new Date(now.getTime() + 5 * 60000); // 5 minutes from now
+    const snoozeTime = new Date(now.getTime() + 5 * 60000);
     
     const hours = snoozeTime.getHours();
     const minutes = String(snoozeTime.getMinutes()).padStart(2, '0');
@@ -154,7 +158,6 @@ function snoozeAlarm() {
     const hours12 = hours % 12 || 12;
     const formattedTime = `${String(hours12).padStart(2, '0')}:${minutes}`;
     
-    // Add snooze alarm
     alarms.push({
         time: formattedTime,
         ampm: ampm,
@@ -169,13 +172,11 @@ function setAlarm() {
     const minutes = minsSelect.value;
     const ampm = ampmSelect.value === '1' ? 'AM' : 'PM';
     
-    // Validate input
     if (hours === '0' && minutes === '00') {
         alert('Please set a valid alarm time.');
         return;
     }
     
-    // Check for duplicate alarm
     const alarmExists = alarms.some(alarm => 
         alarm.time === `${hours}:${minutes}` && alarm.ampm === ampm
     );
@@ -185,17 +186,14 @@ function setAlarm() {
         return;
     }
     
-    // Add new alarm
     alarms.push({
         time: `${hours}:${minutes}`,
         ampm: ampm,
         triggered: false
     });
     
-    // Update UI
     displayAlarms();
     
-    // Reset inputs
     hrsSelect.value = '0';
     minsSelect.value = '00';
     ampmSelect.value = '1';
@@ -218,7 +216,6 @@ function displayAlarms() {
         alarmList.appendChild(li);
     });
     
-    // Add delete functionality
     document.querySelectorAll('.delete-alarm').forEach(button => {
         button.addEventListener('click', function() {
             const index = parseInt(this.dataset.index);
@@ -259,10 +256,9 @@ function updateStopwatch() {
     stopwatchDisplay.value = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
-// Countdown Functions
+
 function startCountdown() {
     if (!countdownRunning) {
-        // Initialize countdown time if not already set
         if (countdownTime === 0) {
             if (!parseCountdownInput()) return;
         }
@@ -282,16 +278,15 @@ function parseCountdownInput() {
         return false;
     }
     
-    // Parse MM:SS format
     const [minutes, seconds] = timeInput.split(':').map(Number);
     
     if (isNaN(minutes) || isNaN(seconds) || minutes < 0 || seconds < 0 || seconds >= 60) {
-        alert('Please enter time in MM:SS format (e.g., 05:30 for 5 minutes 30 seconds)');
+        alert('Please enter time in MM:SS format like 05:30)');
         return false;
     }
     
     countdownTime = minutes * 60 + seconds;
-    originalCountdownTime = countdownTime;
+    originalcdtime = countdownTime;
     return true;
 }
 
@@ -303,7 +298,7 @@ function pauseCountdown() {
 function resetCountdown() {
     clearInterval(countdownInterval);
     countdownTime = 0;
-    originalCountdownTime = 0;
+    originalcdtime = 0;
     countdownDisplay.value = '00:00:00';
     countdownInput.value = '';
     countdownRunning = false;
@@ -311,6 +306,7 @@ function resetCountdown() {
     countdownInput.disabled = false;
     progressBar.style.width = '100%';
     progressBar.style.backgroundColor = '#4CAF50';
+    countdownDisplay.classList.remove('blink');
 }
 
 function updateCountdown() {
@@ -319,6 +315,16 @@ function updateCountdown() {
         countdownRunning = false;
         countdownDisplay.value = '00:00:00';
         progressBar.style.width = '0%';
+        
+        
+        timerSound.play();
+        
+        
+        countdownDisplay.classList.add('blink');
+        setTimeout(() => {
+            countdownDisplay.classList.remove('blink');
+        }, 3000);
+        
         alert('Countdown finished!');
         countdownInput.disabled = false;
         return;
@@ -332,25 +338,28 @@ function updateCountdown() {
     
     countdownDisplay.value = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     
-    // Update progress bar
+    
+    if (countdownTime <= 10) {
+        countdownDisplay.classList.add('blink');
+    }
+    
     updateProgressBar();
 }
 
 function updateProgressBar() {
-    const progressPercentage = (countdownTime / originalCountdownTime) * 100;
+    const progressPercentage = (countdownTime / originalcdtime) * 100;
     progressBar.style.width = `${progressPercentage}%`;
     
-    // Change color based on remaining time
     if (progressPercentage < 20) {
-        progressBar.style.backgroundColor = '#f44336'; // Red
+        progressBar.style.backgroundColor = '#f44336';
     } else if (progressPercentage < 50) {
-        progressBar.style.backgroundColor = '#FFC107'; // Yellow
+        progressBar.style.backgroundColor = '#FFC107';
     } else {
-        progressBar.style.backgroundColor = '#4CAF50'; // Green
+        progressBar.style.backgroundColor = '#4CAF50';
     }
 }
 
-// Keyboard Event Handler
+// enter key pressed
 function handleKeyPress(e) {
     if (e.key === 'Enter') {
         if (document.activeElement === countdownInput) {
@@ -361,5 +370,5 @@ function handleKeyPress(e) {
     }
 }
 
-// Initialize the application when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', init);
